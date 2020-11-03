@@ -1,2 +1,502 @@
-# CODIGO-EVALUCION-2-2-CORTE-
-AQUI SE PUEDE SUBIR CODIGO PARA LO DEL PARCIAL 
+using System;
+public class Hello{
+   
+   //PROGRAMA ELABORADOS POR LOS ESTUDIANTES: "JEFERSON DAVID CAÑON MELO" 
+   //"PEDRO DANIEL ACERO CASTAÑADA" "CARLOS ALBERTO CRISTANCHO PARRA"
+   
+   class Persona
+	{
+		
+		
+		private  string _names;
+
+        private string _lastnames;
+       
+		private uint _identificationnumber;
+    
+        private byte _age;
+
+        private uint _telephonenumber;
+
+        private string _email;
+
+        private string _genero;
+    
+	    public Persona (string names, string lastnames, uint identificationnumber, byte age, uint telephonenumber,
+						string email, string genero)
+		{
+			this._names = names;
+			this._lastnames = lastnames;
+			this._identificationnumber = identificationnumber;
+			this._age = age;
+			this._telephonenumber = telephonenumber;
+			this._email = email;
+			this._genero = genero;
+		}
+		
+		public string names { get => _names; set => names = value;}
+		public string lastnames { get => _lastnames; set => lastnames = value;}
+		public uint identificationnumber { get => _identificationnumber; set => identificationnumber = value;}
+		public byte age { get => _age; set => age = value;}
+		public uint telephonenumber { get => _telephonenumber; set => telephonenumber = value;}
+		public string email { get => _email; set => email = value;}
+		public string genero { get => _genero; set => genero = value;}
+		
+		public override string ToString()
+		{
+			return "PROFESOR:"+ names + " " +lastnames + "" +identificationnumber +""+ age + ""+ telephonenumber+ 
+			""+email+ ""+genero;
+		}
+		
+	}	
+	
+		class Profesor:Persona
+	{
+	    private long _codigoprofesor;
+	    private byte _materiasdictadas;
+	    private string _horariodetrabajo;
+	    
+	    
+	     public Profesor (string names, string lastnames, uint identificationnumber, byte age, uint telephonenumber,
+						string email, string genero , long codigoprofesor, byte materiasdictadas, string horariodetrabajo)
+						:base(names, lastnames, identificationnumber, age, telephonenumber, email, genero)
+		{
+			this._codigoprofesor  = codigoprofesor;
+			this._materiasdictadas = materiasdictadas;
+			this._horariodetrabajo = horariodetrabajo;
+		}
+		
+		public long codigoprofesor  { get => _codigoprofesor; set => codigoprofesor = value;}
+		public byte  materiasdictadas  { get => _materiasdictadas; set => materiasdictadas = value;}
+		public string  horariodetrabajo  { get => _horariodetrabajo; set => horariodetrabajo  = value;}
+		
+		public override string ToString()
+		{
+			return "PROFESOR:"+ codigoprofesor + " " + materiasdictadas + "" + horariodetrabajo;
+		}	
+	
+	}	
+	
+	class Estudiante:Persona
+	{
+	    private long _codigoestudiante;
+	    private byte _semestre;
+	    private string _carrera;
+	    private int _materiasregistradas;
+	    private string[] materias;
+
+	    public Estudiante  (string names, string lastnames, uint identificationnumber, byte age, uint telephonenumber,
+						string email, string genero, long codigoestudiante, byte semestre, string carrera)
+						:base(names, lastnames, identificationnumber, age, telephonenumber, email, genero)
+	    {
+	        this._codigoestudiante = codigoestudiante;
+	        this._semestre = semestre;
+	        this._carrera = carrera;
+	    }
+	    
+	   	public long codigoestudiante  { get => _codigoestudiante; set  => codigoestudiante =  value;}
+		public byte  semestre  { get => _semestre; set => semestre = value;}
+		public string carrera   { get => _carrera; set => carrera = value;}
+        
+		public  override string ToString()
+		{
+			return ":"+ codigoestudiante + " " + semestre + "" + carrera;
+		}
+		
+		static protected string _materia1 = "MATEMATICAS BASICA CODIGO: 607001 GRUPO: 601 PROFESOR: CIRO ANDRES COBOS"; 
+	    static protected string _materia1horario = "LUNES Y MARTES  DE 6:00pm a 8:00pm";
+		static protected string _materia2 = "EXPRESION ESCRITA CODIGO: 70891 GRUPO: 500 PROFESOR: JUAN GABRIEL RUIZ";
+		static protected string _materia2horario = "MIERCOLES Y VIERNES DE 6:00pm A 8:00PM";
+		static protected string _materia3 = "HISTORIA DE INGENIERIA CODIGO: 625014 GRUPO:201 PROFESOR: ELISA MARIELDA";
+		static protected string _materia3horario = "MARTES Y LUNES DE 8:00PM A 10:00PM";
+		static protected string _materia4 = "ARQUITECTURA DE COMPUTADORES  CODIGO: 50679  GRUPO: 601 PROFESOR: CIRO ANDRES COBOS";
+		static protected string _materia4horario = "JUEVES Y VIERNES DE 8:00PM A 10:00PM";
+		static protected string _materia5 = "LOGICA DE PROGRAMACION  CODIGO:60781  GRUPO:501 PROFESOR: MARTA CASTELLANOS";
+		static protected string _materia5horario = "VIERNES Y MIERCOLES DE 8:00PM A 10:00PM";
+		
+       static string get_materia1()
+       {
+           return _materia1;
+       }
+       
+       static public void set_materia1(string materia1)
+       {
+           _materia1 = materia1;
+       }
+       
+       static string get_materia1horario()
+       {
+           return _materia1horario;
+       }
+       
+       static public void set_materia1horario(string materia1horario)
+       {
+           _materia1horario = materia1horario;
+       }
+       
+       static string get_materia2()
+       {
+           return _materia2;
+       }
+       
+       static public void set_materia2(string materia2)
+       {
+           _materia2 = materia2;
+       }
+       
+       static string get_materia2horario()
+       {
+           return _materia2horario;
+       }
+       
+       static public void set_materia2horario(string materia2horario)
+       {
+           _materia2horario = materia2horario;
+       }
+       
+       static string get_materia3()
+       {
+           return _materia3;
+       }
+       
+       static public void set_materia3(string materia3)
+       {
+           _materia3 = materia3;
+       }
+       
+       static string get_materia3horario()
+       {
+           return _materia3horario;
+       }
+       
+       static public void set_materia3horario(string materia3horario)
+       {
+           _materia3horario = materia3horario;
+       }
+       
+       static string get_materia4()
+       {
+           return _materia4;
+       }
+       
+       static public void set_materia4(string materia4)
+       {
+           _materia4 = materia4;
+       }
+       
+       static string get_materia4horario()
+       {
+           return _materia4horario;
+       }
+       
+       static public void set_materia4horario(string materia4horario)
+       {
+           _materia4horario = materia4horario;
+       }
+       
+       static string get_materia5()
+       {
+           return _materia5;
+       }
+       
+       static public void set_materia5(string materia5)
+       {
+           _materia5 = materia5;
+       }
+       
+        static string get_materia5horario()
+       {
+           return _materia5horario;
+       }
+       
+       static public void set_materia5horario(string materia5horario)
+       {
+           _materia5horario = materia5horario;
+       }
+       
+       
+       public string Print()
+       {
+           string s;
+           
+           s = "---- PRIMERA MATERIA : " + get_materia1() + "----" 
+             + " Horario: " + get_materia1horario()  + "----" 
+             + "SEGUNDA MATERIA : " + get_materia2() + " ----" 
+             + " Horario: " + get_materia2horario()  + "----" 
+             + "TERCERA MATERIA : " + get_materia3() + "----" 
+             + " Horario: " + get_materia3horario()  + "----" 
+             + "CUARTA MATERIA: : " + get_materia4() + "----" 
+             + " Horario: " + get_materia4horario()  + "----" 
+             + "QUINTA MATERIA : " + get_materia5()  + "----" 
+             + " Horario: " + get_materia5horario();
+           return s;
+       }
+       
+        
+        public void Imprimir()
+        {
+             materias = new string[5];
+             
+              for(int i=0; i < 5 ; i++)
+             {
+                  Console.WriteLine("escriba las materias a ver : {0} ", i + 1);
+                materias[i] = Console.ReadLine();
+             }
+             
+            Console.WriteLine("las materias registradas son:  ");
+            
+            for(int i=0; i < 5 ; i++)
+            {
+                Console.WriteLine("usted ha registrado las siguientes materias: " + materias[i]);
+            }
+            
+            Console.ReadKey();
+        }
+        
+        public void Quitarmateria()
+        {
+              materias = new string[5];
+             Console.WriteLine("escriba las materias a ver: ");
+              for(int i=0; i < 5 ; i++)
+             {
+                materias[i] = Console.ReadLine();
+             }
+             
+            Console.WriteLine("las materias registradas son:  ");
+            
+            for(int i=0; i < 5 ; i++)
+            {
+                Console.WriteLine("usted ha registrado las siguientes materias: " + materias[i]);
+                if(materias[0] == "matematicas basica")
+                {
+                    Console.WriteLine("materia quitada");               
+                }
+            }
+            
+            Console.ReadKey();
+            
+            
+        }
+	}
+
+		class Administrativo:Persona
+    {
+        private long _administrativocodigo;
+        private string _horarioadministrativo;
+        private string  _funcion;
+        
+        public Administrativo ( string names, string lastnames, uint identificationnumber, byte age, uint telephonenumber,
+						string email, string genero, long administrativocodigo, string horarioadministrativo, string funcion)
+						:base(names, lastnames, identificationnumber, age, telephonenumber, email, genero)
+        {
+            this._administrativocodigo = administrativocodigo;
+            this._horarioadministrativo  = horarioadministrativo;
+            this._funcion = funcion;
+        }
+        
+        public long administrativocodigo  { get => _administrativocodigo; set => administrativocodigo = value;}
+		public string  horarioadministrativo  { get => _horarioadministrativo; set => horarioadministrativo  = value;}
+		public string  funcion  { get => _funcion; set => funcion  = value;}
+	
+		public override string ToString()
+		{
+			return "PROFESOR:"+ administrativocodigo + " " + horarioadministrativo + "" + funcion;
+		}
+    }
+    
+    class Horario
+    {
+        private string[]  _dias = {"lunes", "martes", "miercoles", "jueves", "viernes"};
+        private string[]  _horasdiurno = {"6:00am hasta 9:00am", "9:00am hasta 11:00am"};
+        private string[]  _horasnocturno = {"6:00pm hasta 8:00pm", "8:00pm hasta 10:00pm"}; 
+        
+        public Horario(string[] dias, string[] horasnocturno, string[] horasdiurno)
+        {
+            this._dias = dias;
+            this._horasnocturno = horasnocturno;
+            this._horasdiurno = horasdiurno;
+        }
+    }
+    
+	class Materia
+	{
+	    private int materiassemestre = 5;
+	    private  string[] materias = {"MATEMATICAS BASICA", "EXPRESION ESCRITA", "ARQUITECTURA DE COMPUTADORES", "HISTORIA DE INGENIERIA", 
+	    "LOGICA DE PROGRAMACION"};
+	    private int[] creditos = {3, 2, 3, 2, 4};
+	}
+	
+	class Malla
+	{
+	   private int numerodesemestres = 9;
+	   private int creditostotales = 230;
+	   private int materiastotales = 55;
+	}
+    
+    public static void Main()
+    {
+        Console.WriteLine("PROGRAMA ELABORADOS POR LOS ESTUDIANTES: ");
+        Console.WriteLine("JEFERSON DAVID CAÑON MELO");
+        Console.WriteLine("PEDRO DANIEL ACERO");
+        Console.WriteLine("CARLOS ALBERTO CRISTANCHO");
+
+        // Your code here!
+        Profesor a = new Profesor ("CIRO ANDRES", "COBOS MELO", 1000731821, 25, 312456079, "profe@uninpahu.edu.co", "hombre", 2020103097, 6
+        , "6:00am a 10:00pm");
+        System.Console.WriteLine("PROFESOR1 :  "+ a.names + "--" + a.lastnames + "--"+ a.identificationnumber + "--" + a.age + "--"+ 
+        a.telephonenumber + "--"+ "--" + a.email + "--" + a.genero);
+        System.Console.WriteLine(a.codigoprofesor + " -- MATERIAS QUE DICTA: "+ a.materiasdictadas + " -- Horario de trabajo:  "
+        + a.horariodetrabajo );
+        System.Console.WriteLine("");
+     
+        Profesor b = new Profesor ("DIEGO ANDRES", "MENDOZA MORA", 100678954, 30, 312456079, "ELDIEGO@UNINPAHU.EDU.CO", "hombre", 2020110241, 6
+        , "6:00am a 10:00pm");
+        System.Console.WriteLine("PROFESOR2:"+b.names + "--" + b.lastnames + "--"+ b.identificationnumber + "--" + b.age + "--"+ 
+        b.telephonenumber + "--"+ "--" + b.email + "--" + b.genero);
+         System.Console.WriteLine(b.codigoprofesor + " -- MATERIAS QUE DICTA: "+ b.materiasdictadas + " -- Horario de trabajo:  "
+        + b.horariodetrabajo );
+        System.Console.WriteLine("");
+        
+        //administracion AQUI
+        
+        
+        Administrativo q = new Administrativo("MAURICIO", "SOLARTE FUENTES", 1006783456, 29, 3124534568, "SOLARTE@UNINPAHU.EDU.CO", "hombre", 
+        2020110241, "6pm a 10pm", "RECEPCION");  
+        System.Console.WriteLine("ADMINISTRATIVO_1:" + q.names + "--" + q.lastnames + "--" + q.identificationnumber + "--" + q.age + "--" +
+        b.telephonenumber + "--" + "--" + q.email + "--" + q.genero);
+        System.Console.WriteLine(q.administrativocodigo + "HORARIO EN QUE ATIENDE " + q.horarioadministrativo + "FUNCION QUE CUMPLE" + q.funcion);
+        System.Console.WriteLine("");
+        
+        Administrativo z = new Administrativo("ALEJANDRA", "BRAVO UÑATE", 1006783456, 29, 3124534568, "ALEJA@UNINPAHU.EDU.CO", "mujer", 2020110241, 
+        "6pm a 10pm", "RECEPCION");  
+        System.Console.WriteLine("ADMINISTRATIVO_1:" + q.names + "--" + q.lastnames + "--" + q.identificationnumber + "--" + q.age + "--" +
+        b.telephonenumber + "--" + "--" + q.email + "--" + q.genero);
+        System.Console.WriteLine(q.administrativocodigo + "HORARIO EN QUE ATIENDE " + q.horarioadministrativo + "FUNCION QUE CUMPLE" + q.funcion);
+        // ESTUDIANTE DE AQUI PA ABAJO 
+        
+		System.Console.WriteLine("");
+		System.Console.WriteLine("");
+		System.Console.WriteLine("MATERIAS PRIMER SEMESTRE");
+		System.Console.WriteLine("MATEMATICAS BASICA");
+		System.Console.WriteLine("EXPRESION ESCRITA");
+		System.Console.WriteLine("HISTORIA DE INGENIERIA");
+		System.Console.WriteLine("ARQUITECTURA DE COMPUTADORES");
+		System.Console.WriteLine("LOGICA DE PROGRAMACION");
+		
+
+        Console.WriteLine("");
+        
+        Estudiante e = new Estudiante("PEPITO", "BUITRAGO", 1000731455, 20, 3103507082, "PEPapig@uninaphu.edu.co", "hombre", 202010023, 1
+        , "INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_1:" + e.names + "--" + e.lastnames + "--" + e.identificationnumber + "--" + e.age + "--" +
+		e.telephonenumber + "--" + "--" + e.email + "--" + e.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ e.codigoestudiante + " semestre cursado: "+ e.semestre + "--"+ e.carrera);
+        System.Console.WriteLine("");
+        System.Console.WriteLine(e.Print());
+        e.Imprimir();
+
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+    
+        
+	    Estudiante f = new Estudiante("ANDRES", "COBOS PEÑA", 1073069881, 21, 3145679209, "cobos34@uninaphu.edu.co", "hombre", 2020102345, 1, 
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_2:" + f.names + "--" + f.lastnames + "--" + f.identificationnumber + "--" + f.age + "--" +
+		f.telephonenumber + "--" + "--" + f.email + "--" + f.genero);	
+		System.Console.WriteLine("Codigo estudiantil: "+ f.codigoestudiante + " semestre cursado: "+ f.semestre + "--"+ f.carrera);
+        System.Console.WriteLine("");
+        f.Imprimir();
+       
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+        
+		Estudiante g = new Estudiante("CARLOS", "HURTADO NUÑEZ", 1000735678, 22, 3108990415, "carlosyuhu@uninaphu.edu.co", "hombre", 2020101415,1,
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_3:" + g.names + "--" + g.lastnames + "--" + g.identificationnumber + "--" + g.age + "--" +
+		g.telephonenumber + "--" + "--" + g.email + "--" + g.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ g.codigoestudiante + " semestre cursado: "+ g.semestre + "--"+ g.carrera);
+        System.Console.WriteLine("");
+        g.Imprimir();
+        
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+        
+		Estudiante h = new Estudiante("ESTEFANIA", "GRANADA MONTENEGRO", 1000731123, 25, 3115678214, "estefierrotehu@uninaphu.edu.co", "mujer",2020123415,1,
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_4:" + h.names + "--" + h.lastnames + "--" + h.identificationnumber + "--" + h.age + "--" +
+		h.telephonenumber + "--" + "--" + h.email + "--" + h.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ h.codigoestudiante + " semestre cursado: "+ h.semestre + "--"+ h.carrera);
+        System.Console.WriteLine("");
+        h.Imprimir();
+        
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+        
+		Estudiante  i = new Estudiante("DANIELA", "FUENTES DUARTE ", 100077789, 28, 3103567892, "andreshu@uninaphu.edu.co", "mujer", 2020167890, 1, 
+		"INGENEIRIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_5:" + i.names + "--" + i.lastnames + "--" + i.identificationnumber + "--" + i.age + "--" +
+		i.telephonenumber + "--" + "--" + i.email + "--" + i.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ i.codigoestudiante + " semestre cursado: "+ i.semestre + "--"+ i.carrera);
+        System.Console.WriteLine("");
+        i.Imprimir();
+        
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+        
+		Estudiante j = new Estudiante("PEPITO", "CAÑON MELO", 1000917891, 30, 3103508902, "paepihub@uninaphu.edu.co", "hombre",2020134567,1,
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_6:" + j.names + "--" + j.lastnames + "--" + j.identificationnumber + "--" + j.age + "--" +
+	    j.telephonenumber + "--" + "--" + j.email + "--" +j.genero);
+	   	System.Console.WriteLine("Codigo estudiantil: "+ j.codigoestudiante + " semestre cursado: "+ j.semestre + "--"+ j.carrera);
+        System.Console.WriteLine("");
+        j.Imprimir();
+        
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+       
+        
+		Estudiante k = new Estudiante("MESSI", "AHORCADO PEÑA", 100289072, 25, 3168906640, "messirve@uninaphu.edu.co", "hombre",2020456891,1,
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_7:" + k.names + "--" +k.lastnames + "--" + k.identificationnumber + "--" + k.age + "--" +
+		k.telephonenumber + "--" + "--" + k.email + "--" + k.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ k.codigoestudiante + " semestre cursado: "+ k.semestre + "--"+ k.carrera);
+        System.Console.WriteLine("");
+        k.Imprimir();
+        
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+        
+		Estudiante l = new Estudiante("CRISTIANO", "RONALDO¡", 104089721, 17, 3167890132, "ELBICHO@uninaphu.edu.co", "hombre",2020567890,1,
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_8:" +l.names + "--" + l.lastnames + "--" + l.identificationnumber + "--" + l.age + "--" +
+		l.telephonenumber + "--" + "--" + l.email + "--" + l.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ l.codigoestudiante + " semestre cursado: "+ l.semestre + "--"+ l.carrera);
+        System.Console.WriteLine("");
+        l.Imprimir();
+        
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+       
+		Estudiante m = new Estudiante("ALEX", "PEÑA PRIETO", 134567821, 15, 3178906452, "alexgue@uninaphu.edu.co", "hombre", 2020345678, 1, 
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_9:" + m.names + "--" + m.lastnames + "--" + m.identificationnumber + "--" + m.age + "--" +
+		m.telephonenumber + "--" + "--" + m.email + "--" + m.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ m.codigoestudiante + " semestre cursado: "+ m.semestre + "--"+ m.carrera);
+        System.Console.WriteLine("");
+        m.Imprimir();
+        
+        Console.WriteLine("DAR ENTER PARA SEGUIR CON EL REGISTRO DE MATERIAS DEL SIGUIENTE ESTUDIANTE");
+	    Console.WriteLine("");
+       
+    
+		Estudiante o = new Estudiante("PEDRO", "ACERO QUIROGA", 109901929, 14, 3195608013, "quirope@uninaphu.edu.co", "hombre",2020341256,1,
+		"INGENIERIA DE SOFTWARE");
+		System.Console.WriteLine("ESTUDIANTE_10:" + o.names + "--" + o.lastnames + "--" + o.identificationnumber + "--" + o.age + "--" +
+		o.telephonenumber + "--" + "--" + o.email + "--" + o.genero);
+		System.Console.WriteLine("Codigo estudiantil: "+ o.codigoestudiante + " semestre cursado: "+ o.semestre + "--"+ o.carrera);
+        System.Console.WriteLine("");
+        o.Imprimir();
+       
+       Console.WriteLine("DAR ENTER PARA FINALIZAR EL PROGRAMA");
+    }
+}
