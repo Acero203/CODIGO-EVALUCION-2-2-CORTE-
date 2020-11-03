@@ -1,2 +1,90 @@
-# CODIGO-EVALUCION-2-2-CORTE-
-AQUI SE PUEDE SUBIR CODIGO PARA LO DEL PARCIAL 
+using System;
+
+namespace ESTE_ES_HPTA_2
+{
+   public class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] estudiante = new string[4];
+            string[] codigo = new string[4];
+            int opcion = 0;
+       
+            do
+            {
+                Console.WriteLine(" escriba 1 para registrar estudiante");
+                Console.WriteLine("escriba 2 para buscar estudiante");
+                Console.WriteLine("escriba 3 para borrar materias");
+                opcion = int.Parse(Console.ReadLine());
+
+
+                switch (opcion)
+                {
+                   
+                    case 1:
+                        for (int i = 0; i < 3; i++)
+                        {
+                            int suma(i);
+                                
+                             Console.WriteLine("escriba el nombre del estudiante" + i);
+                            estudiante[i] = Console.ReadLine();
+                            Console.WriteLine("escriba el codigo del estudiante" + i);
+                            codigo[i] = Console.ReadLine();
+
+                            return [codigo[i]];
+                           
+                        }
+                        break;
+                } } while (opcion != 0);
+        }
+
+
+        class administrativos: Program
+        {
+            static void Main(string[] args)
+            {
+                string buscarestudiante = "";
+                int opcion = 0;
+                 Program obj = new Program();
+                Console.ReadLine(obj.[i])
+
+                do
+                {
+                    Console.WriteLine("escriba 2 para buscar estudiante");
+                    Console.WriteLine("escriba 3 para borrar materias");
+                    opcion = int.Parse(Console.ReadLine());
+
+                    switch (opcion) {
+
+                        case 2:
+
+                            Console.WriteLine("escriba el codigo del estudiante");
+                            buscarestudiante = Console.ReadLine();
+                            foreach (string item in codigo)
+                            {
+                                if (item == buscarestudiante)
+                                    Console.WriteLine("se ha encontrado al estudiante" + "---" + item);
+
+
+                            }
+                            break;
+
+                        case 3:
+                            Console.WriteLine("escriba el codigo del estudiante");
+                            buscarestudiante = Console.ReadLine();
+                            for (int i = 0; i < 3; i++)
+                            {
+                                if (codigo[i] == buscarestudiante)
+                                    codigo[i] = "";
+
+                                Console.WriteLine("dato borrado" + i);
+
+                            }
+                            break;
+
+                        default:
+                            break;
+                    }
+                } while (opcion != 0);
+            }
+        } 
